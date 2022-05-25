@@ -1,0 +1,62 @@
+.pan{
+    background: linear-gradient(rgba(255,255,255,0.5), rgb(104, 139, 103, 0.4));
+    padding:5%;
+    text-align:center;
+    width:40%;
+    border-radius:5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left:25%;
+    
+}
+
+.pan form{
+    display:inline;
+}
+
+.pan button {
+    margin:1%;
+}
+
+.art{
+    background: linear-gradient(rgba(255,255,255,0.5), rgb(104, 139, 103, 0.4));
+    padding:1%;
+    width:75%;
+    margin:auto;
+    overflow:hidden;
+    border-radius:5px;
+}
+
+.article{
+    width:100%;
+}
+
+.art img{
+    width:15%;
+    float:left;
+    border-radius:5px;
+    margin-right: 2%;
+}
+
+.description{
+    text-align:justify;
+    margin:30px;
+    width:100%;
+}
+
+.art button{
+    padding:10px;
+    float:right;
+    margin-left:20px;
+}
+
+.article {
+    display:inline-block;
+    width:100%;
+    margin:0;
+}
+
+#prix, .prix{
+    float:right;
+}

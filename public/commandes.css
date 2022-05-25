@@ -1,0 +1,28 @@
+.fleur{
+    display:inline;
+}
+
+.art{
+    border-radius:5px;
+    background: linear-gradient(rgba(255,255,255,0.5), rgb(104, 139, 103, 0.4));
+    overflow:hidden;
+}
+
+.description{
+    display:inline-block;
+    width:75%;
+}
+
+img{
+    margin:15px;
+    border-radius:5px;
+}
+
+#date{
+    float:right;
+    font-weight:600;
+}
+
+#etat{
+    font-weight:600;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Jardinerie de Lua</title>
+    <link rel="stylesheet" type="text/css" href="/feuille.css" />
+    <link rel="stylesheet" type="text/css" href="/sheet.css" />
+    <link rel="icon" type="image/png" href="/images/icon.png" />
+    <meta charset="utf-8">
+  </head>
+  <body class="connexion">
+    <div class="log-container">
+      <h1>Connexion <%if(vendeur===1){%>vendeur<%}%></h1>
+      <form action="http://localhost:8080/jardinerie-de-lua/connexion<% if(vendeur===1){%>-vendeur<%}%>" method="POST">
+        <input type="text" name="pseudo" placeholder="Nom d'utilisateur" required="required"/><br>
+        <input type="password" name="password" placeholder="Mot de passe" required="required"/><br><br>
+        <button type="submit">Connexion</button>
+      </form><br>
+      <% if (typeof(erreur) != 'undefined') {%>
+      <div class="error">Votre pseudo ou votre mot de passe est incorrect.</div>
+      <%}%>
+      <%if(vendeur===1){%> Vous êtes client ? <a href="http://localhost:8080/jardinerie-de-lua/connexion">Cliquez-ici.</a><%}
+	else{%>Vous êtes vendeur ? <a href="http://localhost:8080/jardinerie-de-lua/connexion-vendeur">Cliquez-ici.</a><%}%>
+    </div>
+  </body>
+</html>

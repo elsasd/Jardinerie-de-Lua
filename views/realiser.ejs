@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Jardinerie de Lua</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="/feuille.css" />
+    <link rel="stylesheet" type="text/css" href="/composer.css" />
+    <link rel="stylesheet" type="text/css" href="/bouquet.css" />
+    <link rel="stylesheet" type="text/css" href="/realiser.css" />
+    <link rel="stylesheet" type="text/css" href="/panier.css" />
+    <link rel="icon" type="image/png" href="/images/icon.png" />
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <header id="header">
+      <div id="co">
+	<ul>
+	  <li><a href="/jardinerie-de-lua/deconnexion">Me déconnecter</a></li>
+	</ul>
+      </div>
+      <a href="http://localhost:8080/jardinerie-de-lua"><h1> La jardinerie de Lua </h1></a>
+    </header>
+
+    <% if (fleur.length != 0){%>
+    <div class="body-container">
+
+      Bouquet à composer :<br>
+      <div class="composition">
+	<% for (var i =0; i< fleur.length; i++){%>
+		<div class="pic-container">
+		  <div class="nom"><%=fleur[i]['nom']%><br>
+		  Quantité : <%=fleur[i]['nombre']%></div>
+		  <img src="<%= fleur[i]['photo'] %>">
+		</div>
+		<%}%>
+		</div>
+
+	<form action="" method="POST">
+	  <input type="hidden" name="id" value=<%= fleur[0]['id'] %>>
+	     <button value="submit"> Bouquet fini ! </button>
+	</form>
+	<%}else{%>
+	<div class="pan">
+	  Ton travail est fini, repose-toi, tu l'as bien mérité !<br><br>
+	</div>
+	<%}%>
+
+    </div>
+  </body>
+</html>

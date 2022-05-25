@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Jardinerie de Lua</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="/feuille.css" />
+    <link rel="stylesheet" type="text/css" href="/panier.css" />
+    <link rel="icon" type="image/png" href="/images/icon.png" />
+   <script src="/panier.js"></script>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <header id="header">
+      <div id="co">
+	<ul>
+	  <li><a href="/jardinerie-de-lua/deconnexion">Me déconnecter</a></li>
+	  <li style="background-color:rgb(45, 67, 48)"><a href="/jardinerie-de-lua/panier">Voir mon panier</a></li>
+	  <li><a href="/jardinerie-de-lua/commandes">Voir mes commandes</a></li>
+	</ul>
+      </div>
+      <a href="/jardinerie-de-lua/"><h1> La jardinerie de Lua </h1></a>
+    </header>
+    
+    
+    <% if (panier.length >0) {%>
+    <% var prix_pan =0;%>
+    <div class="art">
+      <% for(var i = 0; i < panier.length; i++){%>
+	  <div class="article">
+	  <br>
+	  <% if (panier[i][0][0]!=0) {%>
+	  <img src="<%= bouquet[panier[i][0][0]-1]['photo']%>">
+	  <% }else{%>
+    <img src="/images/composition.png">
+    <%}%>
+	  <div class="description">
+	    <span style="font-weight:bold">Bouquet <%= i+1%> </span>:
+	    <% if (panier[i][0][0]!=0) {%>
+	    <%=bouquet[panier[i][0][0]-1]['nom']%> -
+	    <%}%> <%=panier[i][2][0]%>€<br>
+	    <% prix_pan += parseFloat(panier[i][2][0])%>
+	    <% for(var j = 0; j < panier[i][1][0].length; j++){%>
+		<%= fleur[(panier[i][1][0][j])-1]['nom'] %> (<%= panier[i][1][1][j] %>)<% if(j!=panier[i][1][0].length -1) {%>,<%}%>
+		<%}%>
+	   </div>
+	   <form action="/jardinerie-de-lua/supp" method="GET"><button name="id" value="<%=i%>">Supprimer</button></form>
+	 </div> 
+	 <%}%><br>
+	 <form action="/jardinerie-de-lua/commander" method="POST">
+	   <input type="hidden" value=<%=Math.round(prix_pan*100)/100%> name="prix"><br>
+	   <button id="commander">Valider le panier</button>
+	    <span class="prix">€</span><span id="prix"><%= Math.round(prix_pan*100)/100 %></span>
+	 </form>
+    </div>
+    <%}else{%>
+    <div class="pan">
+      Ton panier est vide !<br>
+      <form action="/jardinerie-de-lua/composer" method="GET"><br>
+        <button value="submit"> Personnaliser mon bouquet </button>
+            </form>
+            <form action="/jardinerie-de-lua/" method="GET">
+        <button value="submit"> Voir les bouquets déjà existant </button>
+      </form>
+    </div>
+    <%}%>
+  </body>
+</html>

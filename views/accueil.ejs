@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Jardinerie de Lua</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="/feuille.css" />
+    <link rel="stylesheet" type="text/css" href="/accueil.css" />
+    <link rel="icon" type="image/png" href="/images/icon.png" />
+    <script src="/accueil.js"></script>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <header id="header">
+      <div id="co">
+        <ul>
+          <li><a href="/jardinerie-de-lua/deconnexion">Me déconnecter</a></li>
+          <li><a href="/jardinerie-de-lua/panier">Voir mon panier</a></li>
+          <li><a href="/jardinerie-de-lua/commandes">Voir mes commandes</a></li>
+        </ul>
+        <a href="/jardinerie-de-lua/composer" class="button-nav-bar">
+          <button value="submit"> Personnaliser son bouquet </button>
+        </a>
+      </div>
+      <a href="http://localhost:8080/jardinerie-de-lua"><h1> La jardinerie de Lua </h1></a>
+    </header>
+    
+    <div class="tri">
+      <div class="for">
+	<form action="/jardinerie-de-lua" method="GET" id="form">
+      	  <input name="min" type="number" min="0" max="100" placeholder="Prix minimum"/><br>
+	  <input name="max" type="number" min="0" max="100" placeholder="Prix maximum"/>
+	  <button value="submit" id="buttri"/>
+	</form>
+      </div>
+      <div class="onglet">
+	Trier
+      </div>
+    </div>     
+
+    <% var i;
+       for (i = 0; i < bouquet.length; i++) { %>
+       <div class="defile">
+	 <a href="/jardinerie-de-lua/bouquet/<%=bouquet[i]['nom']%>">
+	   
+	   <div class="nom"><%= bouquet[i]['nom'] %></div>
+	   <img src="<%= bouquet[i]['photo'] %>" id=<%= bouquet[i]['id'] %>><br>
+	   <div class="prix">Prix : <%=bouquet[i]['prix']%>€</div>
+	   
+	 </a>
+       </div>
+       <%}%>
+
+       <div class="bouton">
+        <button id='left'>Défiler vers la droite</button>
+        <button id='stop'>Stopper le défilement</button>
+        <button id='right'>Défiler vers la gauche</button>
+       </div>
+   
+  </body>
+</html>

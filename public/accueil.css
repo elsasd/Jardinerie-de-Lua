@@ -1,0 +1,42 @@
+/* ------- PARAMETRES ANIMATION D'ACCUEIL ------- */
+
+div.defile {
+    position: absolute;
+    margin-top:1%;
+    border-radius:5px;
+    background: rgba(168,205,190,0.5);
+    padding: 1%;
+    width:27.33%;
+    overflow:hidden;
+    font-weight:bold;
+}
+
+.defile a{   
+    text-shadow: 1px 1px 1px white, 0 0 10px white;
+}
+
+div.defile img{
+    float:left;
+    margin:1%;
+    margin-left : 5%;
+    width:90%;
+    border-radius:5px;
+}
+
+/* -------- PARAMETRES BOUTONS D'ACCUEIL -------- */
+
+.bouton{
+    display:block;
+    width:90%;
+    text-align:center;
+    margin:auto;
+    margin-top:33%;
+}
+#left {
+    float:left;
+}
+
+#right {
+    float:right;
+}
+

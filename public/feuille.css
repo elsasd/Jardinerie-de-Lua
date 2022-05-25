@@ -1,0 +1,117 @@
+
+/* --------------- PARAMETRES BODY --------------- */
+body {
+    background-image: url("images/back4.jpg");
+    ackground-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow: scroll;
+    background-size: 100%;
+    font-family: FreeMono;
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------------- HEADER ------------------- */ 
+
+h1,h2{
+    color : white;
+    text-shadow: 2px 1px 1px #2d593a, -1px 0 0 #4b614e, 0 1px 0 #4b614e, 0 -1px 0 #4b614e,
+    1px 1px #4b614e, -1px -1px 0 #4b614e, 1px -1px 0 #4b614e, -1px 1px 0 #4b614e;
+    text-decoration: none;
+    padding-left:1.5%;
+    font-weight:normal;
+}
+
+a{
+    text-decoration: none;
+    color : #4b614e;
+    text-shadow: 1px 1px 1px #2d593a, 0 0 10px #4b614e;
+}
+
+header{
+    margin: 0;
+    padding-bottom: 1%;
+}
+
+/* --------------- BARRE DECO ---------------- */
+
+#co ul {
+    font-size:20px;
+    width:100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(75, 97, 78);
+}
+
+#co li {
+    float: right;
+}
+
+#co li a {
+    display: block;
+    color: white;  
+    text-shadow: 1px 1px 1px white, 0 0 10px white;
+    text-align: center;
+    padding: 0 16px;
+    padding:5px;
+    text-decoration: none;
+    padding-right:20px;
+    padding-left:20px;
+}
+#co li a:hover {
+    background-color:rgb(45, 67, 48);
+}
+
+/* ------------------ RECHERCHE ----------------- */
+
+.tri{
+    overflow:hidden;
+    transform: translateY(-50%);
+    position : absolute;
+    color : white;
+    text-shadow: 1px 1px 1px #9abc83, 0 0 10px #9abc83;
+}
+
+.for{
+    background-color: #4b614e;
+    border: 1px solid rgb(75, 97, 78);
+    padding : 5px;
+    float:left;
+}
+
+.tri form input{
+    width : 120px;
+}
+
+div.onglet{
+    background-color: #4b614e;
+    padding:5px;
+    float:left;
+}
+
+/* --------------- BOUTON PERSO ---------------- */
+
+.button-nav-bar{
+    float:right;
+    margin-top:3%;
+    
+}
+
+button{
+    border-radius:5px;
+    background-color: rgb( 255, 255, 255 );
+    padding : 1%;
+    margin-right : 1%;
+}
+
+button:hover {
+    background-color: rgb( 229, 240, 226 );
+    border-color : darkgrey;
+}
+
+input:focus {
+   outline: none;
+}
+

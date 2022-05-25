@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Jardinerie de Lua</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="/feuille.css" />
+    <link rel="stylesheet" type="text/css" href="/composer.css" />
+    <link rel="stylesheet" type="text/css" href="/bouquet.css" />
+    <link rel="icon" type="image/png" href="/images/icon.png" />
+    <script type="text/javascript" src="/bouquet.js"></script>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <header id="header">
+      <div id="co">
+	<ul>
+	  <li><a href="/jardinerie-de-lua/deconnexion">Me déconnecter</a></li>
+	  <li><a href="/jardinerie-de-lua/panier">Voir mon panier</a></li>
+	  <li><a href="/jardinerie-de-lua/commandes">Voir mes commandes</a></li>
+	</ul>
+      </div>
+      <a href="http://localhost:8080/jardinerie-de-lua"><h1> La jardinerie de Lua </h1></a>
+    </header>
+
+    <script> var id= "<%= bouquet[0]['id']%> ";</script>
+    <div class="body-container">
+      <a href = "#"><%= bouquet[0]['nom'] %></a><br>
+	<img src=<%= bouquet[0]['photo'] %>>
+
+	<div class="carac">
+	  Fleurs :
+	  <% 
+	    var len = composition.length;
+             for (var i = 0; i < len - 1; i++) { %>
+	     <%= composition[i]['nom']%>,
+	     <% } %>
+	     <%= composition[i]['nom'] %><br><br><br>
+	     
+	     Quantités à modifier* :
+	     <br><br>
+	     <form>
+	       <%
+		  for (var i = 0; i < len; i++) { %>
+		  <%= composition[i]['nom'] %> (<span id="prix<%=i%>"><%= composition[i]['prix'] *0.90 %></span>€) :
+		  
+		  <select id=<%= composition[i]['id']%> class="select">
+		    <% var j;
+		       for (j = 0; j < 20; j++) { %>
+		       <option value = <%= j%> 
+			       <% if (j==composition[i]['nombre']){%> selected <%}%>> <%= j %>
+		       </option>
+		       <% } %>
+	          </select><br>
+		  <% } %>
+	     <br>
+             Prix : <span id="prix_tot"><%= bouquet[0]['prix']%></span>€
+	     </form>
+	     <button id="commander">Ajouter au panier</button>
+	</div>
+
+	<div class="composition">
+	  Fleurs composant le bouquet :<br><br>
+	  <% for (var i=0; i< len; i++) {%>
+	     <div class="pic-container">
+	       <div class="nom"><%=composition[i]['nom']%></div>
+	       <img src="<%= composition[i]['photo'] %>">
+	     </div>
+
+	     <%}%>
+	</div>
+    </div>
+  </body>
+</html>

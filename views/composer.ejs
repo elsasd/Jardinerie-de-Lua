@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Jardinerie de Lua</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="/feuille.css" />
+    <link rel="stylesheet" type="text/css" href="/composer.css" />
+    <link rel="icon" type="image/png" href="/images/icon.png" />
+   <script src="/composer.js"></script>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <header id="header">
+      <div id="co">
+        <ul>
+          <li><a href="/jardinerie-de-lua/deconnexion">Me déconnecter</a></li>
+          <li><a href="/jardinerie-de-lua/panier">Voir mon panier</a></li>
+          <li><a href="/jardinerie-de-lua/commandes">Voir mes commandes</a></li>
+        </ul>
+        <a href="/jardinerie-de-lua" class="button-nav-bar">
+          <button value="submit"> Voir les bouquets </button>
+        </a>
+      </div>
+      <a href="http://localhost:8080/jardinerie-de-lua"><h1> La jardinerie de Lua </h1></a>
+    </header>
+    <script>
+      var prix = [];
+    </script>
+    <div class="presentation">
+      Prix du bouquet composé : <span id="prix_tot">0</span>€<br><br>
+      <label> Afficher les prix en continu  : <input type="checkbox" id="cont"></label>
+      <button id="commander" style="float:right;">Ajouter au panier</button>
+      <br><br>
+      <form><% for (var i = 0; i < fleur.length; i++) { %><script>prix.push(parseFloat(<%= fleur[i]['prix'] %>)) </script>
+        <div class="pic-container">
+          <img src="<%= fleur[i]['photo'] %>" class="bouquet-panier">
+          <input class="fleur" type="number" value="0" style="width:35px" id=<%= fleur[i]['id'] %>>
+          <div class="nom">
+            <%= fleur[i]['nom'] %>
+            <br>
+            <%= fleur[i]['prix'] %>€
+          </div>
+        </div>
+        
+        
+        
+        <%}%>
+      </form>
+    </div>
+  </body>
+</html>

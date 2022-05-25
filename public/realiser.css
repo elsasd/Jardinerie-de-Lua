@@ -1,0 +1,15 @@
+.pic-container{
+}
+
+.composition{
+}
+
+img {
+    filter : blur(1px);
+    z-index : 0;
+}
+
+.nom {
+    z-index : 10;
+    font-size:25px;
+}

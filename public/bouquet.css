@@ -1,0 +1,58 @@
+div.body-container{
+    background-color : rgba(255,255,255, 0.5);
+    margin : auto;
+    width : 80%;
+    border-radius: 5px;
+    overflow:hidden;
+    padding:40px;
+}
+
+div.body-container img {
+    border-radius : 5px;
+    margin : 20px;
+    float :left;
+    width: 45%;
+}
+
+div.carac {
+    float : left;
+    margin: 20px;
+    width: 45%;
+}
+
+button{
+    float:right;
+    border-radius:5px;
+    background-color: rgb( 255, 255, 255 );
+    padding : 1%;
+    margin : 0.5%;
+    width : 40%;
+}
+
+button:hover{
+    background-color: rgb( 229, 226, 226 );
+    border-color : darkgrey;
+}
+
+div.composition{
+    width:100%;
+    display:inline-block;
+    margin-top:50px;
+}
+
+div.composition img, .nom{
+    width:100%;
+    margin:0;
+    font-size:27px;
+}
+
+.pic-container{
+    width:210px;
+    height:200px;
+    margin-left:10px;
+    margin-bottom:15px;
+}
+
+
+
+
